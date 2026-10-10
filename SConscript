@@ -2069,7 +2069,7 @@ cgps = env.Program('clients/cgps', ['clients/cgps.c'],
 gps2udp = env.Program('clients/gps2udp', ['clients/gps2udp.c'],
                       LIBS=[libgps_static],
                       parse_flags=gpsflags)
-gpsctl = env.Program('gpsctl', ['gpsctl.c'],
+gpsctl = env.Program('clients/gpsctl', ['clients/gpsctl.c'],
                      LIBS=[libgpsd_static, libgps_static],
                      parse_flags=gpsdflags + gpsflags)
 gpsd = env.Program('gpsd/gpsd', gpsd_sources,
@@ -3327,13 +3327,13 @@ if not cleaning:
 # Tags for Emacs and vi
 misc_sources = ['clients/cgps.c',
                 'clients/gps2udp.c',
+                'clients/gpsctl.c',
                 'clients/gpsdctl.c',
                 'clients/gpsdecode.c',
                 'clients/gpspipe.c',
                 'clients/gpxlogger.c',
                 'clients/ntpshmmon.c',
                 'clients/ppscheck.c',
-                'gpsctl.c',
                 ]
 sources = libgpsd_sources + libgps_sources + gpsd_sources + gpsmon_sources + \
     misc_sources
